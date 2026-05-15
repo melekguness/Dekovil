@@ -6,25 +6,29 @@
 
 <title>DEKOVİL LVII</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 
 :root{
 --gold:#d8b46a;
 --gold-soft:#f5d48f;
---dark:#07141d;
---card:rgba(8,18,28,0.72);
+--gold-dark:#a48343;
+--dark:#040a0f;
+--card:rgba(6, 15, 23, 0.78);
+--card-hover:rgba(10, 24, 37, 0.85);
 --text:#f8f8f8;
---muted:#cfd8e3;
+--muted:#b4c2ce;
+--border:rgba(216, 180, 106, 0.15);
 }
 
 body{
 font-family:'Inter',sans-serif;
-background:#061018;
+background:#040a0f;
 color:var(--text);
 overflow-x:hidden;
+line-height:1.5;
 }
 
 body::before{
@@ -32,7 +36,7 @@ content:"";
 position:fixed;
 inset:0;
 background:
-linear-gradient(rgba(2,8,14,0.75),rgba(2,8,14,0.92)),
+linear-gradient(rgba(4,10,15,0.8),rgba(4,10,15,0.95)),
 url("resim.png");
 background-size:cover;
 background-position:center;
@@ -42,23 +46,25 @@ z-index:-2;
 .container{
 max-width:1100px;
 margin:auto;
-padding:18px;
+padding:20px;
 }
 
 .hero{
 position:relative;
-border-radius:34px;
-padding:22px;
-background:linear-gradient(145deg, rgba(7,20,29,0.85), rgba(8,18,28,0.6));
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 25px 60px rgba(0,0,0,0.5);
-margin-top:45px; /* Logo büyüdüğü için alan açıldı */
+border-radius:30px;
+padding:24px;
+background:linear-gradient(145deg, rgba(7,20,29,0.9), rgba(4,10,15,0.7));
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border:1px solid rgba(216,180,106,0.2);
+box-shadow:0 30px 70px rgba(0,0,0,0.6);
+margin-top:65px;
+text-align:center;
 }
 
 .hero-image{
-height:260px;
-border-radius:26px;
+height:240px;
+border-radius:22px;
 overflow:hidden;
 position:relative;
 }
@@ -73,175 +79,200 @@ object-fit:cover;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to top, rgba(6,16,24,0.95), transparent 55%);
+background:linear-gradient(to top, rgba(4,10,15,1) 0%, rgba(4,10,15,0.4) 50%, transparent 100%);
 }
 
-/* LOGO BOYUTU BÜYÜTÜLDÜ */
 .logo-box{
 position:absolute;
-top:-60px;
+top:-55px;
 left:50%;
 transform:translateX(-50%);
-width:130px;
-height:130px;
+width:120px;
+height:120px;
 border-radius:50%;
-background:rgba(8,18,28,0.95);
-backdrop-filter:blur(14px);
+background:rgba(4,10,15,0.95);
+backdrop-filter:blur(10px);
 display:flex;
 align-items:center;
 justify-content:center;
-border:2px solid rgba(216,180,106,0.6);
-box-shadow:0 15px 35px rgba(0,0,0,0.65);
+border:2px solid var(--gold);
+box-shadow:0 15px 40px rgba(0,0,0,0.8);
 z-index:5;
 }
 
 .logo-box img{
-width:82%;
-height:82%;
+width:150%;
+height:150%;
 object-fit:contain;
 }
 
 .hero-content{
-text-align:center;
-padding-top:80px;
+padding-top:30px;
+position:relative;
+z-index:2;
 }
 
 .brand{
 font-family:'Cinzel',serif;
-font-size:40px;
-letter-spacing:3px;
+font-size:36px;
+letter-spacing:4px;
+color:#fff;
+text-shadow:0 2px 10px rgba(0,0,0,0.5);
+font-weight:600;
 }
 
 .subtitle{
 color:var(--gold-soft);
-font-size:13px;
-letter-spacing:3px;
-margin-top:6px;
+font-size:12px;
+letter-spacing:4px;
+margin-top:8px;
+font-weight:500;
+text-transform:uppercase;
 }
 
 .desc{
-max-width:700px;
-margin:auto;
-margin-top:12px;
+max-width:600px;
+margin:14px auto 0;
 color:var(--muted);
 font-size:14px;
-line-height:1.7;
+font-weight:300;
 }
 
 .badge{
 display:inline-block;
-margin-top:14px;
-padding:10px 18px;
+margin-top:18px;
+padding:8px 24px;
 border-radius:999px;
-background:rgba(216,180,106,0.12);
-border:1px solid rgba(216,180,106,0.3);
+background:linear-gradient(90deg, rgba(216,180,106,0.15), rgba(216,180,106,0.05));
+border:1px solid rgba(216,180,106,0.4);
 color:var(--gold-soft);
-font-size:12px;
+font-size:11px;
+letter-spacing:2px;
+font-weight:600;
 }
 
 .menu-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:20px;
-margin-top:28px;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:24px;
+margin-top:40px;
 }
 
 .menu-section{
 background:var(--card);
-border-radius:26px;
-padding:22px;
-border:1px solid rgba(255,255,255,0.06);
-transition:.25s;
+border-radius:24px;
+padding:26px;
+border:1px solid var(--border);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+transition:all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+display:flex;
+flex-direction:column;
 }
 
 .menu-section:hover{
-transform:translateY(-4px);
-border-color:rgba(216,180,106,0.3);
+transform:translateY(-5px);
+background:var(--card-hover);
+border-color:rgba(216,180,106,0.4);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .section-title{
 font-family:'Cinzel',serif;
-font-size:20px;
+font-size:19px;
 color:var(--gold-soft);
-margin-bottom:16px;
-padding-bottom:10px;
-border-bottom:1px solid rgba(255,255,255,0.08);
+margin-bottom:20px;
+padding-bottom:12px;
+border-bottom:1px solid rgba(216,180,106,0.25);
 display:flex;
 align-items:center;
-gap:8px;
+gap:10px;
+letter-spacing:1px;
 }
 
 .sub-section-title{
-font-size:14px;
+font-size:13px;
 color:var(--gold);
-margin:14px 0 6px 0;
+margin:18px 0 10px 0;
 text-transform:uppercase;
-letter-spacing:1px;
-border-bottom:1px dashed rgba(216,180,106,0.2);
-padding-bottom:4px;
+letter-spacing:1.5px;
+font-weight:700;
+padding-left:6px;
+border-left:2px solid var(--gold);
 }
 
 .item{
-padding:12px 0;
-border-bottom:1px dashed rgba(255,255,255,0.08);
+padding:14px 4px;
+border-bottom:1px solid rgba(255,255,255,0.05);
+transition:background 0.2s;
+border-radius:8px;
 }
 
 .item:last-child{border:none;}
 
 .item-top{
 display:flex;
-justify-content:space-between;
-gap:10px;
-align-items:baseline;
+justify-content:between;
+gap:12px;
+align-items:center;
 }
 
 .item-name{
 font-weight:600;
-font-size:14px;
-line-height:1.4;
+font-size:14.5px;
+color:#fff;
+flex:1;
+letter-spacing: 0.3px;
 }
 
 .price{
 color:var(--gold-soft);
 font-weight:700;
 white-space:nowrap;
-font-size:14px;
+font-size:13.5px;
+background:rgba(216,180,106,0.12);
+padding:4px 10px;
+border-radius:8px;
+border:1px solid rgba(216,180,106,0.2);
 }
 
 .ingredients{
-font-size:12px;
-color:#b4c2ce;
-margin-top:5px;
-line-height:1.5;
+font-size:12.5px;
+color:var(--muted);
+margin-top:6px;
+line-height:1.6;
+font-weight:300;
+padding-right:10px;
 }
 
-/* Bilgi Notları Alanı (Kahve Farkları vb.) */
 .info-box{
-margin-top:12px;
-padding:10px 14px;
-background:rgba(216,180,106,0.06);
-border-left:2px solid var(--gold);
-border-radius:4px 12px 12px 4px;
+margin-top:20px;
+padding:12px 16px;
+background:rgba(216,180,106,0.05);
+border:1px dashed rgba(216,180,106,0.25);
+border-left:3px solid var(--gold);
+border-radius:12px;
 font-size:12px;
 color:var(--muted);
-line-height:1.6;
+line-height:1.7;
 }
 
 .info-box div{
-margin-bottom:4px;
+margin-bottom:5px;
 }
 .info-box div:last-child{
 margin-bottom:0;
 }
 
-/* Instagram Geri Bildirim Alanı Temizlendi */
 .feedback-box {
-margin-top: 30px;
-padding: 20px;
+margin-top: 45px;
+padding: 24px;
 text-align: center;
-background: linear-gradient(145deg, rgba(216,180,106,0.05), rgba(7,20,29,0.5));
-border-radius: 26px;
-border: 1px solid rgba(216,180,106,0.15);
+background: linear-gradient(145deg, rgba(216,180,106,0.04), rgba(4,10,15,0.8));
+border-radius: 24px;
+border: 1px solid var(--border);
+backdrop-filter:blur(10px);
 }
 
 .insta-link {
@@ -249,44 +280,54 @@ display: inline-flex;
 align-items: center;
 gap: 10px;
 text-decoration: none;
-color: var(--gold-soft);
-font-weight: 600;
-font-size: 14px;
-padding: 12px 24px;
+color: var(--dark);
+font-weight: 700;
+font-size: 13.5px;
+letter-spacing: 0.5px;
+padding: 12px 28px;
 border-radius: 999px;
-background: rgba(216,180,106,0.1);
-border: 1px solid var(--gold);
+background: var(--gold);
+box-shadow: 0 8px 20px rgba(216,180,106,0.2);
 transition: all 0.3s ease;
-margin-top: 10px;
+margin-top: 12px;
 }
 
 .insta-link:hover {
-background: var(--gold);
-color: var(--dark);
-transform: scale(1.05);
+background: var(--gold-soft);
+transform: scale(1.03);
+box-shadow: 0 12px 25px rgba(216,180,106,0.3);
 }
 
 .footer{
 text-align:center;
-margin:25px 0 25px;
-font-size:12px;
-color:#b9c6d3;
-letter-spacing:1px;
+margin:40px 0 30px;
+font-size:11px;
+color:rgba(255,255,255,0.4);
+letter-spacing:2px;
+text-transform:uppercase;
 }
 
 @media(max-width:768px){
+.container{padding:14px;}
 .logo-box{
-width:110px;
-height:110px;
-top:-50px;
+width:105px;
+height:105px;
+top:-45px;
 }
-.hero{padding:16px; margin-top:35px;}
-.hero-image{height:180px;}
-.brand{font-size:26px;}
-.hero-content{padding-top:65px;}
+.hero{padding:16px; margin-top:50px; border-radius:24px;}
+.hero-image{height:160px; border-radius:16px;}
+.brand{font-size:26px; letter-spacing:2px;}
+.hero-content{padding-top:20px;}
 .menu-grid{
 grid-template-columns:1fr;
+gap:16px;
+margin-top:25px;
 }
+.menu-section{padding:18px; border-radius:20px;}
+.section-title{font-size:17px; margin-bottom:14px;}
+.item{padding:12px 2px;}
+.item-name{font-size:14px;}
+.price{font-size:13px; padding:3px 8px;}
 }
 </style>
 </head>
@@ -314,7 +355,65 @@ grid-template-columns:1fr;
 
 <div class="menu-grid">
 
-<!-- BAŞLANGIÇLAR & ATIŞTIRMALIKLAR -->
+<!-- 1. KAHVALTI TABAKLARI -->
+<div class="menu-section">
+<h2 class="section-title">🍳 KAHVALTI TABAKLARI</h2>
+<div class="item">
+<div class="item-top">
+<div class="item-name">SICAK KAHVALTI TABAĞI</div>
+<div class="price">290₺</div>
+</div>
+<div class="ingredients">Omlet, sucuk, sosis, sigara böreği, patates kızartması, ızgara domates ve biber, bal, tereyağı.</div>
+</div>
+<div class="item">
+<div class="item-top">
+<div class="item-name">SOĞUK KAHVALTI TABAĞI</div>
+<div class="price">280₺</div>
+</div>
+<div class="ingredients">Peynir çeşitleri, zeytin çeşitleri, domates, salatalık, bal, tereyağı ve taze simit.</div>
+</div>
+</div>
+
+<!-- 2. GÖZLEMELER & TOSTLAR -->
+<div class="menu-section">
+<h2 class="section-title">🫓 GÖZLEMELER & TOSTLAR</h2>
+<div class="sub-section-title">Gözlemeler</div>
+<div class="item"><div class="item-top"><div class="item-name">Kaşarlı Gözleme</div><div class="price">180₺</div></div></div>
+<div class="item"><div class="item-top"><div class="item-name">Patatesli Gözleme</div><div class="price">180₺</div></div></div>
+<div class="item"><div class="item-top"><div class="item-name">Peynirli Gözleme</div><div class="price">180₺</div></div></div>
+<div class="item"><div class="item-top"><div class="item-name">Kıymalı Gözleme</div><div class="price">220₺</div></div></div>
+
+<div class="sub-section-title">Tost Menüleri</div>
+<div class="item">
+<div class="item-top"><div class="item-name">Kaşarlı Tost Menü</div><div class="price">290₺</div></div>
+<div class="ingredients">2 adet kaşarlı tost; patates kızartması, domates, salatalık ve zeytin çeşitleri ile.</div>
+</div>
+<div class="item">
+<div class="item-top"><div class="item-name">Karışık Tost Menü</div><div class="price">320₺</div></div>
+<div class="ingredients">2 adet karışık tost; patates kızartması, domates, salatalık ve zeytin çeşitleri ile.</div>
+</div>
+</div>
+
+<!-- 3. SALATALAR -->
+<div class="menu-section">
+<h2 class="section-title">🥗 SALATALAR</h2>
+<div class="item">
+<div class="item-top">
+<div class="item-name">SEZAR SALATA</div>
+<div class="price">240₺</div>
+</div>
+<div class="ingredients">Mevsim yeşillikleri, ızgara tavuk, kruton ekmek, parmesan peyniri ve özel sezar sos.</div>
+</div>
+<div class="item">
+<div class="item-top">
+<div class="item-name">ÇITIR TAVUKLU SALATA</div>
+<div class="price">240₺</div>
+</div>
+<div class="ingredients">Mevsim yeşillikleri, çıtır tavuk göğsü parçaları, cherry domates, mısır ve parmesan peyniri.</div>
+</div>
+</div>
+
+<!-- 4. BAŞLANGIÇLAR & ATIŞTIRMALIKLAR -->
 <div class="menu-section">
 <h2 class="section-title">🍟 BAŞLANGIÇLAR & ATIŞTIRMALIKLAR</h2>
 <div class="item">
@@ -326,40 +425,42 @@ grid-template-columns:1fr;
 </div>
 </div>
 
-<!-- PİZZALAR & MENÜLER -->
+<!-- 5. GELENEKSEL LEZZETLER (MANTI) -->
 <div class="menu-section">
-<h2 class="section-title">🍕 PİZZALAR & MENÜLER</h2>
+<h2 class="section-title">🥟 GELENEKSEL LEZZETLER</h2>
+<div class="sub-section-title">Sinop Mantısı</div>
+<div class="item"><div class="item-top"><div class="item-name">Yoğurtlu Sinop Mantısı</div><div class="price">360₺</div></div></div>
+<div class="item"><div class="item-top"><div class="item-name">Cevizli Sinop Mantısı</div><div class="price">380₺</div></div></div>
+<div class="item"><div class="item-top"><div class="item-name">Yoğurtlu & Cevizli Karışık Sinop Mantısı</div><div class="price">390₺</div></div></div>
+</div>
+
+<!-- 6. ANA YEMEKLER -->
+<div class="menu-section">
+<h2 class="section-title">🍗 ANA YEMEKLER</h2>
 <div class="item">
 <div class="item-top">
-<div class="item-name">MARGHERITA PIZZA</div>
-<div class="price">280₺</div>
+<div class="item-name">SCHNITZEL</div>
+<div class="price">190₺</div>
 </div>
-<div class="ingredients">Domates sosu, mozzarella peyniri, taze fesleğen yağı ve zeytinyağı.</div>
+<div class="ingredients">Büyük panelenmiş tavuk göğsü, patates kızartması ile.</div>
 </div>
 <div class="item">
 <div class="item-top">
-<div class="item-name">MARGHERITA PİZZA MENÜ</div>
+<div class="item-name">KÖFTE PORSİYON</div>
 <div class="price">390₺</div>
 </div>
-<div class="ingredients">Margherita pizza, patates kızartması ve Coca-Cola.</div>
+<div class="ingredients">5 adet özel köfte, patates kızartması ve mevsim salatası ile.</div>
 </div>
 <div class="item">
 <div class="item-top">
-<div class="item-name">KARIŞIK SPECIAL PIZZA</div>
-<div class="price">320₺</div>
+<div class="item-name">TOMBİK TAVUK DÖNER MENÜ</div>
+<div class="price">250₺</div>
 </div>
-<div class="ingredients">Mantar, sucuk, sosis, mısır, zeytin, biber ve domates.</div>
-</div>
-<div class="item">
-<div class="item-top">
-<div class="item-name">KARIŞIK SPECIAL PİZZA MENÜ</div>
-<div class="price">430₺</div>
-</div>
-<div class="ingredients">Karışık special pizza, patates kızartması ve Coca-Cola.</div>
+<div class="ingredients">Tombik ekmekte tavuk döner, patates kızartması ve Coca-Cola.</div>
 </div>
 </div>
 
-<!-- HAMBURGERLER & MENÜLER -->
+<!-- 7. HAMBURGERLER & MENÜLER -->
 <div class="menu-section">
 <h2 class="section-title">🍔 HAMBURGERLER & MENÜLER</h2>
 <div class="item">
@@ -392,33 +493,40 @@ grid-template-columns:1fr;
 </div>
 </div>
 
-<!-- ANA YEMEKLER -->
+<!-- 8. PİZZALAR & MENÜLER -->
 <div class="menu-section">
-<h2 class="section-title">🍗 ANA YEMEKLER</h2>
+<h2 class="section-title">🍕 PİZZALAR & MENÜLER</h2>
 <div class="item">
 <div class="item-top">
-<div class="item-name">SCHNITZEL</div>
-<div class="price">190₺</div>
+<div class="item-name">MARGHERITA PIZZA</div>
+<div class="price">280₺</div>
 </div>
-<div class="ingredients">Büyük panelenmiş tavuk göğsü, patates kızartması ile.</div>
+<div class="ingredients">Domates sosu, mozzarella peyniri, taze fesleğen yağı ve zeytinyağı.</div>
 </div>
 <div class="item">
 <div class="item-top">
-<div class="item-name">KÖFTE PORSİYON</div>
+<div class="item-name">MARGHERITA PİZZA MENÜ</div>
 <div class="price">390₺</div>
 </div>
-<div class="ingredients">5 adet özel köfte, patates kızartması ve mevsim salatası ile.</div>
+<div class="ingredients">Margherita pizza, patates kızartması ve Coca-Cola.</div>
 </div>
 <div class="item">
 <div class="item-top">
-<div class="item-name">TOMBİK TAVUK DÖNER MENÜ</div>
-<div class="price">250₺</div>
+<div class="item-name">KARIŞIK SPECIAL PIZZA</div>
+<div class="price">320₺</div>
 </div>
-<div class="ingredients">Tombik ekmekte tavuk döner, patates kızartması ve Coca-Cola.</div>
+<div class="ingredients">Mantar, sucuk, sosis, mısır, zeytin, biber ve domates.</div>
+</div>
+<div class="item">
+<div class="item-top">
+<div class="item-name">KARIŞIK SPECIAL PİZZA MENÜ</div>
+<div class="price">430₺</div>
+</div>
+<div class="ingredients">Karışık special pizza, patates kızartması ve Coca-Cola.</div>
 </div>
 </div>
 
-<!-- MAKARNALAR -->
+<!-- 9. MAKARNALAR -->
 <div class="menu-section">
 <h2 class="section-title">🍝 MAKARNALAR</h2>
 <div class="item">
@@ -444,74 +552,7 @@ grid-template-columns:1fr;
 </div>
 </div>
 
-<!-- GÖZLEMELER & TOSTLAR -->
-<div class="menu-section">
-<h2 class="section-title">🫓 GÖZLEMELER & TOSTLAR</h2>
-<div class="sub-section-title">Gözlemeler</div>
-<div class="item"><div class="item-top"><div class="item-name">Kaşarlı Gözleme</div><div class="price">180₺</div></div></div>
-<div class="item"><div class="item-top"><div class="item-name">Patatesli Gözleme</div><div class="price">180₺</div></div></div>
-<div class="item"><div class="item-top"><div class="item-name">Peynirli Gözleme</div><div class="price">180₺</div></div></div>
-<div class="item"><div class="item-top"><div class="item-name">Kıymalı Gözleme</div><div class="price">220₺</div></div></div>
-
-<div class="sub-section-title">Tost Menüleri</div>
-<div class="item">
-<div class="item-top"><div class="item-name">Kaşarlı Tost Menü</div><div class="price">290₺</div></div>
-<div class="ingredients">2 adet kaşarlı tost; patates kızartması, domates, salatalık ve zeytin çeşitleri ile.</div>
-</div>
-<div class="item">
-<div class="item-top"><div class="item-name">Karışık Tost Menü</div><div class="price">320₺</div></div>
-<div class="ingredients">2 adet karışık tost; patates kızartması, domates, salatalık ve zeytin çeşitleri ile.</div>
-</div>
-</div>
-
-<!-- GELENEKSEL LEZZETLER -->
-<div class="menu-section">
-<h2 class="section-title">🥟 GELENEKSEL LEZZETLER</h2>
-<div class="sub-section-title">Sinop Mantısı</div>
-<div class="item"><div class="item-top"><div class="item-name">Yoğurtlu Sinop Mantısı</div><div class="price">360₺</div></div></div>
-<div class="item"><div class="item-top"><div class="item-name">Cevizli Sinop Mantısı</div><div class="price">380₺</div></div></div>
-<div class="item"><div class="item-top"><div class="item-name">Yoğurtlu & Cevizli Karışık Sinop Mantısı</div><div class="price">390₺</div></div></div>
-</div>
-
-<!-- KAHVALTI TABAKLARI -->
-<div class="menu-section">
-<h2 class="section-title">🍳 KAHVALTI TABAKLARI</h2>
-<div class="item">
-<div class="item-top">
-<div class="item-name">SICAK KAHVALTI TABAĞI</div>
-<div class="price">290₺</div>
-</div>
-<div class="ingredients">Omlet, sucuk, sosis, sigara böreği, patates kızartması, ızgara domates ve biber, bal, tereyağı.</div>
-</div>
-<div class="item">
-<div class="item-top">
-<div class="item-name">SOĞUK KAHVALTI TABAĞI</div>
-<div class="price">280₺</div>
-</div>
-<div class="ingredients">Peynir çeşitleri, zeytin çeşitleri, domates, salatalık, bal, tereyağı ve taze simit.</div>
-</div>
-</div>
-
-<!-- SALATALAR -->
-<div class="menu-section">
-<h2 class="section-title">🥗 SALATALAR</h2>
-<div class="item">
-<div class="item-top">
-<div class="item-name">SEZAR SALATA</div>
-<div class="price">240₺</div>
-</div>
-<div class="ingredients">Mevsim yeşillikleri, ızgara tavuk, kruton ekmek, parmesan peyniri ve özel sezar sos.</div>
-</div>
-<div class="item">
-<div class="item-top">
-<div class="item-name">ÇITIR TAVUKLU SALATA</div>
-<div class="price">240₺</div>
-</div>
-<div class="ingredients">Mevsim yeşillikleri, çıtır tavuk göğsü parçaları, cherry domates, mısır ve parmesan peyniri.</div>
-</div>
-</div>
-
-<!-- TATLILAR -->
+<!-- 10. TATLILAR -->
 <div class="menu-section">
 <h2 class="section-title">🍰 TATLILAR</h2>
 <div class="item"><div class="item-top"><div class="item-name">Klasik Çikolatalı Ekler (Adet)</div><div class="price">45₺</div></div></div>
@@ -536,14 +577,14 @@ grid-template-columns:1fr;
 <div class="item"><div class="item-top"><div class="item-name">Antep Fıstıklı Soğuk Baklava (3 Dilim)</div><div class="price">260₺</div></div></div>
 </div>
 
-<!-- SOĞUK İÇECEKLER -->
+<!-- 11. SOĞUK İÇECEKLER -->
 <div class="menu-section">
 <h2 class="section-title">🥤 SOĞUK İÇECEKLER</h2>
 <div class="item"><div class="item-top"><div class="item-name">Su</div><div class="price">20₺</div></div></div>
 <div class="item"><div class="item-top"><div class="item-name">Cam Şişe Su</div><div class="price">45₺</div></div></div>
 <div class="item"><div class="item-top"><div class="item-name">Maden Suyu</div><div class="price">40₺</div></div></div>
 <div class="item"><div class="item-top"><div class="item-name">Meyveli Maden Suyu Çeşitleri</div><div class="price">60₺</div></div></div>
-<div class="item"><div class="item-top"><div class="item-name">Cam Şişe İçecekler (Cola / Fanta / Sprite)</div><div class="price">70₺</div></div></div>
+<div class="item"><div class="item-top"><div class="item-name">Cam Şişe İçecekler (Cola / Fanta)</div><div class="price">70₺</div></div></div>
 <div class="item"><div class="item-top"><div class="item-name">Kutu İçecekler (Cola / Fanta / Sprite)</div><div class="price">80₺</div></div></div>
 <div class="item"><div class="item-top"><div class="item-name">Cappy Meyve Suyu Çeşitleri</div><div class="price">80₺</div></div></div>
 <div class="item"><div class="item-top"><div class="item-name">Churchill</div><div class="price">90₺</div></div></div>
@@ -554,7 +595,7 @@ grid-template-columns:1fr;
 <div class="item"><div class="item-top"><div class="item-name">Milkshake</div><div class="price">140₺</div></div></div>
 </div>
 
-<!-- SICAK İÇECEKLER & KAHVELER -->
+<!-- 12. SICAK İÇECEKLER & KAHVELER -->
 <div class="menu-section">
 <h2 class="section-title">☕ SICAK İÇECEKLER & KAHVELER</h2>
 <div class="sub-section-title">Sıcak İçecekler</div>
@@ -591,11 +632,11 @@ grid-template-columns:1fr;
 
 </div>
 
-<!-- Instagram Geri Bildirim Alanı (Hatalı Karakterler Temizlendi) -->
+<!-- Instagram Geri Bildirim Alanı -->
 <div class="feedback-box">
 <p style="font-size: 13px; color: var(--muted); margin-bottom: 5px;">Geri bildirimleriniz bizim için değerli ✨</p>
 <a href="https://instagram.com/dekovillvii" class="insta-link" target="_blank">
-<svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+<svg style="width:16px;height:16px;fill:currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
 @dekovilvii
 </a>
 </div>
@@ -608,4 +649,3 @@ DEKOVİL LVII © 2026
 
 </body>
 </html>
-   
